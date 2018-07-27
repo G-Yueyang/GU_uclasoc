@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Project: Digital Clock</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+  <style>
+
+    #clock
+    {
+      width:300px;
+      height:100px;
+      background:purple;
+      color: white;
+      font-size: 50px;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+  <script type="text/javascript">
+    var timer;
+    function displayClock()
+    {
+      timer = setInterval(updateClock, 1000);
+    }
+
+    function updateClock()
+    {
+      var dateTime = new Date();
+      var output = "";
+      var ampm = "AM";
+      var hours = dateTime.getHours();
+
+      if (hours > 12)
+      {
+        hours -= 12;
+        ampm = "PM";
+      }
+      if (hours < 10)
+      {
+        hours = "0" + hours;
+      }
+      var minutes = dateTime.getMinutes();
+      if (minutes < 10)
+      {
+        minutes = "0" + minutes;
+      }
+      var seconds = dateTime.getSeconds();
+      if (seconds < 10)
+      {
+        seconds = "0" + seconds;
+      }
+      document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds + " " + ampm;
+    }
+  </script>
+  </head>
+
+  <body onload="displayClock();">
+  <div class="topnav">
+      <a href="index.html">Guyueyang UCLA-SOC</a>
+      <a href="photo.html">Gallery</a>
+      <a href="animals.html">Favorite Animals</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="clock.html">clock</a>
+      <a href="games.html">Game</a>
+    </div>s
+
+    <div id="clock"></div>
+  </body>
+</html>

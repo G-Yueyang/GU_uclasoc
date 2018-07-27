@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+    <style>
+    img {
+      width: 50%;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <a href="index.html">Guyueyang UCLA-SOC</a>
+      <a class='active' href="photo.html">Gallery</a>
+      <a href="animals.html">Favorite Animals</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="clock.html">clock</a>
+      <a href="games.html">Game</a>
+    </div>
+
+    <h1>Click on the photo to see a random image</h1>
+    <img src="https://mmoexaminer.com/wp-content/uploads/2016/07/league-of-legends-wallpaper-19-1.jpg" alt='image' id="changeablePic" onClick="change();">
+
+    <script type="text/javascript">
+
+      var lolaPic = "https://mmoexaminer.com/wp-content/uploads/2016/07/league-of-legends-wallpaper-19-1.jpg";
+
+      var lolbPic = "https://esportsranks.com/wp-content/uploads/2017/04/League-of-Legends-News-Ranks.png";
+
+      var lolcPic = "http://www.leaguewallpapers.com/assets/images/original/mossawi_204331259708_20161112221019_6761932745.jpg";
+
+      var loldPic = "http://www.leaguewallpapers.com/assets/images/original/mossawi_910721556749_20161113133428_623425096273.jpg";
+
+      var lolePic = "http://www.leaguewallpapers.com/assets/images/original/mossawi_738682440482_20161113132919_177944964263.png";
+
+      var lolPics = [lolaPic, lolbPic, lolcPic, loldPic,lolePic];
+
+      function change() {
+        var image = document.getElementById('changeablePic');
+        var lolPic = getRandomInt(0, 5);
+        image.src = lolPics [lolPic]
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+        //The maximum is exclusive and the minimum is inclusive
+      }
+    </script>
+  </body>
+</html>
